@@ -1,0 +1,54 @@
+*{
+    
+    font-size: medium;
+}
+.main{
+    /* background-image: url("https://image.freepik.com/free-photo/white-scattered-clouds-vivid-blue-sky-midsummer-bangkok-thailand_76000-1027.jpg"); */
+    background-image: linear-gradient(to bottom, rgba(196, 79, 196, 0.836) , rgb(255, 255, 255));
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.minHeight{
+    min-height: 80vh;
+}
+.sea{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    height: 2rem;
+}
+.temp{
+    background: rgba(253, 253, 253, 0.699);
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    width: 16rem;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+}
+.flex-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.s1{
+    font-size: 1.6rem;
+}
+.s2{
+    font-size: 1.3rem;
+}
+.s2 span{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.s3{
+    font-size: 1.1rem;
+}
+.s3 span{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
