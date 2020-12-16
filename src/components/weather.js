@@ -8,7 +8,7 @@ const Weather = ()=> {
     const [search, setSearch] = useState("hisar");
     useEffect(() => {
         const fetchApi = async () =>{
-            const url = `http://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=0338409921a1c1c559e930b80c50409a`;
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=0338409921a1c1c559e930b80c50409a`;
             let response = await fetch(url);
             let jsonData = await response.json();
             console.log(jsonData);
