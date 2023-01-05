@@ -15,7 +15,7 @@
 }
 .sea{
     outline: none;
-    border: none;
+    border: 1px solid;
     border-radius: 5px;
     height: 2rem;
 }
@@ -51,4 +51,23 @@
 .s3 span{
     font-size: 1.2rem;
     font-weight: bold;
+}
+ul{
+    list-style: none;
+    border: 1px solid;
+    border-radius: 5px;
+    border-top: none;
+    box-sizing: border-box;
+    padding-left: 0;
+}
+li{
+    padding-left: 10px;
+    border-bottom: 1px solid rgba(209, 123, 195, 0.699);
+}
+li:last-child{
+    border: none;
+}
+li:hover{
+    padding-left: 10px;
+    background-color: rgba(233, 104, 238, 0.795);
 }
