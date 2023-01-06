@@ -9,7 +9,7 @@ import "./weather.css";
 const Weather = (prop) => {
   //states
   const [city, setCity] = useState("");
-  const [search, setSearch] = useState("Delhi");
+  const [search, setSearch] = useState("Hisar");
   const [data, setData] = useState([]);
 
   //functions
@@ -18,7 +18,7 @@ const Weather = (prop) => {
     hide(true);
     getData(cityData.coord.lat, cityData.coord.lon);
   };
-  const getDefaultData = async (city = "Delhi") => {
+  const getDefaultData = async (city = "Hisar") => {
     let response = await fetch(
       `${process.env.REACT_APP_URL}q=${city}&units=metric&appid=${process.env.REACT_APP_API_ID}`
     );
@@ -80,10 +80,14 @@ const Weather = (prop) => {
     let timer;
     timer = setTimeout(() => {
       const getSearchedData = async () => {
-        if (search) {
-          let response = await fetch(`${REACT_APP_API}${search}`);
-          let jsonData = await response.json();
-          setData(jsonData);
+        try {
+          if (search) {
+            let response = await fetch(`${process.env.REACT_APP_API}${search}`);
+            let jsonData = await response.json();
+            setData(jsonData);
+          }
+        } catch (error) {
+          console.log(error.message);
         }
       };
       getSearchedData();
@@ -163,14 +167,15 @@ const Weather = (prop) => {
                 )}
               </div>
             </div>
+            <hr />
             <p className="mt-4 ml-3 text-capitalize s2">
-              <hr />
               <span>Feels:</span> {city.main.feels_like} °C
               <br />
               <span>Min Temp:</span> {city.main.temp_min} °C
               <br />
-              <span>Max Temp:</span> {city.main.temp_max} °C <hr />
+              <span>Max Temp:</span> {city.main.temp_max} °C
             </p>
+            <hr />
             <p className="mt-4 ml-3 s3">
               <span>Wind:</span> {city.wind.speed} m/s
               <br />
